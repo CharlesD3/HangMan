@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=ChoiceMenu
+comment0.text=\r\n\ menu\ for\ hangman\r\n\r\n\ @author\ Hope\ Freebourn,\ Charles\ Dunn,\ Evan\ Hadley.\ \r\n\ @version\ 5/4/18\ \r\n
+comment1.params=
+comment1.target=void\ menuOption()
+comment1.text=\r\n\ displays\ choice\ menu\ \r\n\r\n\ @param\ \ none\r\n\ @return\ none\r\n
+numComments=2

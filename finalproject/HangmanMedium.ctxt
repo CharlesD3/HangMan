@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=HangmanMedium
+comment0.text=\r\n\ game\ of\ hangman\r\n\r\n\ @author\ Hope\ Freebourn,\ Charles\ Dunn,\ Evan\ Hadley.\ \r\n\ @version\ 5/4/18\ \r\n
+comment1.params=
+comment1.target=HangmanMedium()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Hangman\r\n
+comment2.params=choice
+comment2.target=void\ onePlayerMedium(int)
+comment2.text=\r\n\ One\ player\ game\r\nParam\:\ choice\r\nReturn\:\r\n
+comment3.params=mediumWords\ enteredLettersMedium
+comment3.target=int\ enterLetterMedium(java.lang.String,\ char[])
+comment3.text=\r\n\ \ Hint\ user\ to\ enter\ a\ guess\ letter,\r\nParam\:\r\nReturn\:\r\n
+comment4.params=word\ enteredLetters
+comment4.target=boolean\ print(java.lang.String,\ char[])
+comment4.text=\ Print\ word\ with\ asterisks\ for\ hidden\ letters,\ returns\ true\ if\r\nasterisks\ were\ printed,\ otherwise\ return\ false
+comment5.params=letter\ enteredLetters
+comment5.target=boolean\ inEnteredLetters(char,\ char[])
+comment5.text=\r\n\ Check\ if\ letter\ is\ in\ enteredLetters\ array\r\nParam\:\r\nReturn\:\r\n
+comment6.params=enteredLetters
+comment6.target=int\ EmptyPosition(char[])
+comment6.text=\r\n\ Find\ first\ empty\ position\ in\ array\ of\ entered\ letters\r\nParam\:\r\nReturn\:\r\n
+numComments=7

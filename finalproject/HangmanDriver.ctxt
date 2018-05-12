@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=HangmanDriver
+comment0.text=\r\n\ Driver\ for\ class\ HangMan\r\n\r\n\ @author\ Charles\ Dunn\ &\ Hope\ Freebourn\ Period\ 3\r\n\ @version\ 5/1/18\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\r\n\ opens\ choice\ menu,\ driver\ for\ HangMan\r\n\r\n\ param\:\ String[]\ args\r\n\ retuern\:\ none\r\n
+numComments=2
