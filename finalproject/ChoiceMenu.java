@@ -30,17 +30,17 @@ public class ChoiceMenu
         if (menuChoice == 1 )
         {
             HangmanEasy theGameEasy = new HangmanEasy();
-            theGameEasy.onePlayerEasy();
+            
         } 
         else if (menuChoice == 2)
         {
           HangmanMedium theGameMedium = new HangmanMedium();
-          theGameMedium.onePlayerMedium();  
+        // theGameMedium.onePlayerMedium();  
         }
         else if (menuChoice == 3)
         {
          HangmanHard theGameHard = new HangmanHard();
-         theGameHard.onePlayerHard();
+         // theGameHard.onePlayerHard();
         }
         else 
         {

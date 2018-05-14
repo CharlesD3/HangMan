@@ -22,13 +22,15 @@ public class HangmanMedium
     public HangmanMedium()
     {
         // initialise instance variables
-        String[] easyWords = {"cat", "tree","dog"}; 
+        mediumWords = new String[] {"cat", "tree","dog"}; 
 
         RandomWordMedium = (int) (Math.random() * mediumWords.length); 
 
         enteredLettersMedium = new char[mediumWords[RandomWordMedium].length()];
 
         wordGuessed = false;
+        
+        onePlayerMedium(RandomWordMedium, enteredLettersMedium);
     }
 
     /**
@@ -36,65 +38,69 @@ public class HangmanMedium
      *Param: choice
      *Return:
      */
-    public void onePlayerMedium(int choice)
+    public void onePlayerMedium(int RandomWordMedium, char[] enteredLettersMedium )
     {
         int triesCount = 0;
-        do
-        {
-            switch (enterLetterMedium(mediumWords[RandomWordMedium], enteredLettersMedium)) 
+            do
             {
-                case 0:
-                triesCount++;
-                break;
-                case 1:
-                triesCount++;
-                break;
-                case 2:
-                break;
-                case 3:
-                wordGuessed = true;
-                break;
+                switch (enterLetterMedium(mediumWords[RandomWordMedium], enteredLettersMedium)) 
+                {
+                    case 0:
+                    triesCount++;
+                    break;
+                    case 1:
+                    triesCount++;
+                    break;
+                    case 2:
+                    break;
+                    case 3:
+                    wordGuessed = true;
+                    break;
+                }
             }
-            System.out.println("\n The word is " + mediumWords[RandomWordMedium] +
-                " You missed " + (triesCount -EmptyPosition(enteredLettersMedium)) +
-                " times");
+            while(wordGuessed != false);
+         
+        System.out.println("\nThe word is " + mediumWords[RandomWordMedium] + " You missed " + (triesCount -EmptyPosition(enteredLettersMedium)) + " time(s)");
         }
-        while(wordGuessed != true);
-
-    }//end of one player game/ easy 
-    /**
-     *  Hint user to enter a guess letter,
-     *Param:
-     *Return:
-     */
-    public static int enterLetterMedium(String mediumWords, char[] enteredLettersMedium)  
-    {
+        //end of one player game/ easy 
+        /**
+         *  Hint user to enter a guess letter,
+         *returns 0 if letter entered is not in the word (counts as try),
+         *returns 1 if letter were entered 1st time (counts as try),
+         *returns 2 if already guessed letter was REentered,
+         *returns 3 if all letters were guessed
+         *Param:
+         *Return:
+         */
+        public static int enterLetterMedium(String mediumWords, char[] enteredLettersMedium)  
+        {
         System.out.print("Guess a letter pls ");
+
         if (! print(mediumWords, enteredLettersMedium))
         {
             return 3;
-        }//returns 3 if all letters were guessed
-
+        }
         System.out.print(" > ");
         Scanner input = new Scanner(System.in);
         int emptyPosition = EmptyPosition(enteredLettersMedium);
         char userInput = input.nextLine().charAt(0);
-        if (inEnteredLetters(userInput, enteredLettersMedium))
+
+        if (inEnteredLetters(userInput, enteredLettersMedium)) 
         {
             System.out.println(userInput + " is already in the word");
             return 2;
-        }//returns 2 if already guessed letter was reentered
+        }
         else if (mediumWords.contains(String.valueOf(userInput))) 
         {
             enteredLettersMedium[emptyPosition] = userInput;
             return 1;
-        }//returns 1 if letter were entered (try),
-        else
-        {
+        }
+        else {
             System.out.println(userInput + " is not in the word");
             return 0;
-        }//returns 0 if letter entered is not in the word(try)
+        }
     }
+
     /* Print word with asterisks for hidden letters, returns true if
     asterisks were printed, otherwise return false */
 

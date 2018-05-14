@@ -22,13 +22,15 @@ public class HangmanEasy
     public HangmanEasy()
     {
         // initialise instance variables
-        String[] easyWords = {"cat", "tree","dog"}; 
+        easyWords = new String[] {"cat", "tree","dog"}; 
 
         RandomWordEasy = (int) (Math.random() * easyWords.length); 
 
         enteredLettersEasy = new char[easyWords[RandomWordEasy].length()];
 
         wordGuessed = false;
+        
+        onePlayerEasy(RandomWordEasy, enteredLettersEasy);
     }
 
     /**
