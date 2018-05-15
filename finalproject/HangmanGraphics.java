@@ -1,4 +1,3 @@
-
 import gpdraw.*;
 /**
  * Write a description of class Hangman here.
@@ -25,17 +24,42 @@ public class Hangman
         myPen.forward(100);
         myPen.turnRight(90);
         myPen.forward(50);
+        //head
         myPen.up();
         myPen.forward(50);
         myPen.down();
         myPen.drawOval(100.0,100.0);
+        //body
         myPen.up();
         myPen.forward(50);
         myPen.down();
         myPen.forward(225);
+        //left leg
         myPen.turnRight(30);
         myPen.forward(50);
+        //right leg
         myPen.up();
-
+        myPen.turnRight(180);
+        myPen.forward(50);
+        myPen.down();
+        myPen.turnRight(110);
+        myPen.forward(50);
+        //right arm
+        myPen.up();
+        myPen.turnRight(180);
+        myPen.turnRight(30);
+        myPen.forward(180);
+        myPen.turnRight(90);
+        myPen.down();
+        myPen.forward(50);
+        //left arm
+        myPen.up();
+        myPen.turnRight(180);
+        myPen.forward(50);
+        myPen.turnRight(30);
+        myPen.down();
+        myPen.forward(50);
+        
+        
     }
 }
