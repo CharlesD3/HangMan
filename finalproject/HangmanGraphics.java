@@ -1,33 +1,41 @@
 
+import gpdraw.*;
 /**
- * Write a description of class hangmanGraphics here.
- *
- * @author (your name)
+ * Write a description of class Hangman here.
+ * 
+ * @author (your name) 
  * @version (a version number or a date)
  */
-public class HangmanGraphics
+public class Hangman
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    private DrawingTool myPen;
+    private SketchPad myPaper;
     /**
-     * Constructor for objects of class hangmanGraphics
+     * Constructor for objects of class Hangman
      */
-    public HangmanGraphics()
+    public Hangman()
     {
-        // initialise instance variables
-        x = 0;
+       myPaper = new SketchPad(1500,1500);
+       myPen = new DrawingTool(myPaper);
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public void man()
     {
-        // put your code here
-        return x + y;
+        myPen.forward(500);
+        myPen.turnRight(90);
+        myPen.forward(100);
+        myPen.turnRight(90);
+        myPen.forward(50);
+        myPen.up();
+        myPen.forward(50);
+        myPen.down();
+        myPen.drawOval(100.0,100.0);
+        myPen.up();
+        myPen.forward(50);
+        myPen.down();
+        myPen.forward(225);
+        myPen.turnRight(30);
+        myPen.forward(50);
+        myPen.up();
+
     }
 }
