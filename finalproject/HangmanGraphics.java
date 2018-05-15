@@ -16,7 +16,7 @@ public class Hangman
     {
        myPaper = new SketchPad(1500,1500);
        myPen = new DrawingTool(myPaper);
-    }
+    }//end of constructor
     public void man()
     {
         myPen.forward(500);
@@ -61,5 +61,5 @@ public class Hangman
         myPen.forward(50);
         
         
-    }
-}
+    }//end of man
+}//end of Hangman
