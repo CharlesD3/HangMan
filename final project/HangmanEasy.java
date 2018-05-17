@@ -10,15 +10,15 @@ import java.util.concurrent.ThreadLocalRandom;
 public class HangmanEasy implements Hintable 
 { 
     char[] enteredLettersEasy = new char[]{};
-    
+
     String winningWord;
 
     boolean wordGuessed;
 
     int triesCount;
+    int position = easyWords.length;
 
     private static final String[] easyWords = new String[] {"dog", "cat"};
-
     /**
      * Constructor for objects of class Hangman
      */
@@ -33,6 +33,7 @@ public class HangmanEasy implements Hintable
 
         onePlayerEasy();
     }
+
     /**
      *checks if user input is correct
      *Param: none
@@ -85,7 +86,7 @@ public class HangmanEasy implements Hintable
     public void onePlayerEasy()
     {
         print();//prints screen
-        
+
         while (!wordGuessed)
         {
             if (enterLetterEasy())
@@ -141,8 +142,16 @@ public class HangmanEasy implements Hintable
      *Return:
      */
     public int findEmptyPos() 
-    {
-       
+    {    
+        int i;
+        for(i = 0; i <  winningWord.length(); i++)
+        {
+            if(i == position)
+            {
+                return winningWord.charAt(i);
+            }
+        }
+        return i;
     }//end of findEmptyPos
     /**
      * gives user hint
