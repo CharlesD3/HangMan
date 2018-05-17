@@ -106,8 +106,7 @@ public class HangmanMedium implements Hintable
             }
         }
         return false;
-    }
-    
+    }   
     /**
      * Check if letter is in enteredLetters array
      *Param:
@@ -148,7 +147,7 @@ public class HangmanMedium implements Hintable
     {   
         System.out.println("Press ? for a hint");
         int giveLetter = 0;
-        if(userInput == '?' && triesCount < 5 )
+        if(userInput == '?' && triesCount < 4 )
         {
             System.out.println("\nOne letter is " + winningWord.charAt(giveLetter));
         }//prints out a letter in the word

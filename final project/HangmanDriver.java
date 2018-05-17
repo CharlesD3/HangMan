@@ -16,8 +16,6 @@ public class HangmanDriver
         ChoiceMenu menu = new ChoiceMenu();
         menu.menuOption();
         
-        //HangmanGraphics graphics = new Hangman();
-        //graphics.man();
         
     }//end of driver which opens menu
 }//end of HangmanDriver

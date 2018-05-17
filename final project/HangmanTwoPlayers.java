@@ -9,38 +9,33 @@ import java.util.Scanner;
 public class HangmanTwoPlayers
 {
     // instance variables - replace the example below with your own
-    private int x;
-
+    public String word;
     /**
      * Constructor for objects of class HangmanTwoPlayers
      */
     public HangmanTwoPlayers()
     {
         // initialise instance variables
-        x = 0;
+        
     } 
     
-      /**
+     /**
      * gets user input
      * param: none 
      * return: user input statement
      */
-    public void userInput()
+    public String userInput()
     { 
-        Scanner reader = new Scanner(System.in);  
-        System.out.println("Enter a word you want the opponent to guess:(NO CAPS)");
-        String wordUsed = reader.nextLine();
+        Scanner input = new Scanner(System.in);  
+        System.out.println("Player one please enter the word you want the opponent to guess up to 6 letters");
+        String word = input.nextLine();
+        int nameLength = word.length();
+        if (nameLength > 6){
+            System.out.println("Your word is too long, please enter a number up to 6 characters.");
+            word = input.nextLine();
+           }
+        return word;
     }//end of void userInput
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
 }
+
+

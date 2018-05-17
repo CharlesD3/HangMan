@@ -31,9 +31,8 @@ public class HangmanEasy implements Hintable
 
         triesCount = 0;
 
-        onePlayerEasy();
+        onePlayerEasy(); 
     }
-
     /**
      *checks if user input is correct
      *Param: none
@@ -86,7 +85,7 @@ public class HangmanEasy implements Hintable
     public void onePlayerEasy()
     {
         print();//prints screen
-
+        
         while (!wordGuessed)
         {
             if (enterLetterEasy())
@@ -163,7 +162,7 @@ public class HangmanEasy implements Hintable
     {   
         System.out.println("Press ? for a hint");
         int giveLetter = 0;
-        if(userInput == '?' && triesCount < 10 )
+        if(userInput == '?' && triesCount < 6 )
         {
             System.out.println("\nOne letter is " + winningWord.charAt(giveLetter));
         }//prints out a letter in the word

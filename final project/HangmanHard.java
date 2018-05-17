@@ -130,7 +130,6 @@ public class HangmanHard implements Hintable
             {
                 return true;
             }//end of if
-
         }//end of for each loop
         return false;
     }//end of inEnteredLetters
@@ -161,7 +160,6 @@ public class HangmanHard implements Hintable
         if(userInput == '?' && triesCount < 2)
         {
             System.out.println("\nOne letter is " + winningWord.charAt(giveLetter));
-            
         }//prints out a letter in the word
     }//end of hint
 }

@@ -7,18 +7,44 @@
  */
 public abstract class AllHave
 {
-    // instance variables - replace the example below with your own
+    // instance variables - 
 
     /**
-     * An example of a method - replace this comment with your own
+     * 
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param 
+     * @return  
      */
-    public int sampleMethod(int y)
+    public void print()
     {
-        // put your code here
-        
 
+    }
+    /**
+     * 
+     *
+     * @param  
+     * @return    
+     */
+      public void findEmptyPos()
+    {
+
+    }
+    /**
+     * 
+     *
+     * @param  
+     * @return    
+     */
+    public boolean inEnteredLetters(char letter) 
+    {
+    }
+    /**
+     * 
+     *
+     * @param  
+     * @return    
+     */
+    public boolean isLetterInWord(char letter) 
+    {
     }
 }

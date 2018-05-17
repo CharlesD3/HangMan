@@ -38,16 +38,31 @@ public class ChoiceMenu
             int value = it.next();
             if (value == 1 && menuChoice == 1)
             {  
+                System.out.print('\u000c');
                 HangmanEasy theGameEasy = new HangmanEasy();
+                //HangmanGraphics graphics = new HangmanGraphics();
             } //end of if for choice one
             else if (value == 2 && menuChoice == 2)
             {    
+                System.out.print('\u000c');
                 HangmanMedium theGameMedium = new HangmanMedium();
+                // HangmanGraphics graphics = new HangmanGraphics();
             }//end of else if for choice 2
             else if (value == 3 && menuChoice == 3)
             {
+                System.out.print('\u000c');
                 HangmanHard theGameHard = new HangmanHard();
+                // HangmanGraphics graphics = new HangmanGraphics();
             }///end of else if for choice 3
+            else if(value == 4 && menuChoice == 4)
+            {
+            }
+            else if(value == 5 && menuChoice == 5)
+            {
+            }
+            else if(value == 6 && menuChoice == 6)
+            {
+            }
             else 
             {
                 System.out.println("sorry! what you entered is not a choice");

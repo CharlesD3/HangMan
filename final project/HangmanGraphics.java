@@ -21,9 +21,9 @@ public class HangmanGraphics
         
         
     }//end of constructor
-    public void man()
+    public void man(int triescount)
     {   
-        if()
+        if(triesCount == 1)
         {
             myPen.forward(500);
             myPen.turnRight(90);
@@ -32,7 +32,7 @@ public class HangmanGraphics
             myPen.forward(50);
             //head
         }
-        else if ()
+        else if (triesCount == 2)
         {
             myPen.forward(500);
             myPen.turnRight(90);
@@ -46,7 +46,7 @@ public class HangmanGraphics
             myPen.drawOval(100.0,100.0);
             //body
         }
-        else if()
+        else if(triesCount == 3)
         {
             myPen.forward(500);
             myPen.turnRight(90);
@@ -65,7 +65,7 @@ public class HangmanGraphics
             myPen.forward(225);
             //left leg
         }
-        else if()
+        else if(triesCount == 4)
         {
             myPen.forward(500);
             myPen.turnRight(90);
@@ -93,7 +93,7 @@ public class HangmanGraphics
             myPen.turnRight(110);
             myPen.forward(50);
         }
-        else if()
+        else if(triesCount == 5)
         {
             myPen.forward(500);
             myPen.turnRight(90);
@@ -129,7 +129,7 @@ public class HangmanGraphics
             myPen.down();
             myPen.forward(50);
         }
-        else if()
+        else if(triesCount == 6)
         {
             myPen.forward(500);
             myPen.turnRight(90);
