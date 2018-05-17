@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Hintable
-comment0.text=\r\n\ \r\n\r\n\ @author\ Hope\ F,\ Charles\ Dunn,\ &\ Evan\ Hadley\r\n\ @version\ 5/15/2018\r\n
+comment0.text=\r\n\ all\ classes\ must\ have\ a\ hint\r\n\r\n\ @author\ Hope\ F,\ Charles\ Dunn,\ &\ Evan\ Hadley\r\n\ @version\ 5/15/2018\r\n
 comment1.params=userInput
 comment1.target=void\ hint(int)
 comment1.text=\r\n\ prints\ the\ screen\r\n\r\n\ @param\ none\r\n\ @return\ none\r\n

@@ -1,3 +1,5 @@
+
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,7 +21,7 @@ public class ChoiceMenu
      */
     public void menuOption()
     {   
-        ArrayList<Integer> options = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5, 6));
+        ArrayList<Integer> options = new ArrayList<Integer>(Arrays.asList(1, 2, 3));
 
         System.out.println("Welcome to the game Hangman!");
         System.out.println("Choose which game you want to play");
@@ -27,9 +29,6 @@ public class ChoiceMenu
         System.out.println("1. one player,easy level");
         System.out.println("2. one player,medium level");
         System.out.println("3. one player,hard level");
-        System.out.println("4. two players,easy level");
-        System.out.println("5. two players,medium level");
-        System.out.println("6. two players,hard level");
         int menuChoice = reader.nextInt();
 
         Iterator<Integer> it = options.iterator();
@@ -37,32 +36,20 @@ public class ChoiceMenu
         {
             int value = it.next();
             if (value == 1 && menuChoice == 1)
-            {  
-                System.out.print('\u000c');
+            {   
+                 System.out.print('\u000c');
                 HangmanEasy theGameEasy = new HangmanEasy();
-                //HangmanGraphics graphics = new HangmanGraphics();
             } //end of if for choice one
             else if (value == 2 && menuChoice == 2)
-            {    
+            {  
                 System.out.print('\u000c');
                 HangmanMedium theGameMedium = new HangmanMedium();
-                // HangmanGraphics graphics = new HangmanGraphics();
             }//end of else if for choice 2
             else if (value == 3 && menuChoice == 3)
             {
-                System.out.print('\u000c');
+                 System.out.print('\u000c');
                 HangmanHard theGameHard = new HangmanHard();
-                // HangmanGraphics graphics = new HangmanGraphics();
             }///end of else if for choice 3
-            else if(value == 4 && menuChoice == 4)
-            {
-            }
-            else if(value == 5 && menuChoice == 5)
-            {
-            }
-            else if(value == 6 && menuChoice == 6)
-            {
-            }
             else 
             {
                 System.out.println("sorry! what you entered is not a choice");
@@ -70,3 +57,4 @@ public class ChoiceMenu
         }//end of while loop that runs menu
     }//end of menu choice
 }//end of class choiceMenu
+

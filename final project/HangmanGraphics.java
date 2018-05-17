@@ -1,4 +1,5 @@
 import gpdraw.*;
+import java.io.*;
 /**import gpdraw.*;
 /**
  * Write a description of class Hangman here.
@@ -6,14 +7,18 @@ import gpdraw.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class HangmanGraphics 
+public class HangmanGraphics
 {
     private DrawingTool myPen;
     private SketchPad myPaper;
+    public int attempts;
+    public int attemptsEasy = 6;
+    public int attemptsMed = 4;
+    public int attemptsHard = 2;
     /**
      * Constructor for objects of class Hangman
      */
-    public HangmanGraphics()
+    public HangmanGraphics() throws IOException
     {
         myPaper = new SketchPad(1500,1500);
         myPen = new DrawingTool(myPaper);
@@ -21,9 +26,26 @@ public class HangmanGraphics
         
         
     }//end of constructor
-    public void man(int triescount)
-    {   
-        if(triesCount == 1)
+    public int attemptSelect(int menuChoice)
+    {
+        if(menuChoice == 1)
+        {
+            attempts = attemptsEasy;
+        }
+        else if (menuChoice == 2)
+        {
+            attempts = attemptsMed;
+        }
+        else if (menuChoice == 3)
+        {
+            attempts = attemptsHard;
+        }
+        return attempts;
+    }
+    public void man()
+    {
+        for (int x = 0; x < attempts; attempts++){
+        if(x == 1)
         {
             myPen.forward(500);
             myPen.turnRight(90);
@@ -32,7 +54,7 @@ public class HangmanGraphics
             myPen.forward(50);
             //head
         }
-        else if (triesCount == 2)
+        else if (x == 2)
         {
             myPen.forward(500);
             myPen.turnRight(90);
@@ -46,7 +68,7 @@ public class HangmanGraphics
             myPen.drawOval(100.0,100.0);
             //body
         }
-        else if(triesCount == 3)
+        else if(x == 3)
         {
             myPen.forward(500);
             myPen.turnRight(90);
@@ -65,7 +87,7 @@ public class HangmanGraphics
             myPen.forward(225);
             //left leg
         }
-        else if(triesCount == 4)
+         else if(x == 4)
         {
             myPen.forward(500);
             myPen.turnRight(90);
@@ -93,7 +115,7 @@ public class HangmanGraphics
             myPen.turnRight(110);
             myPen.forward(50);
         }
-        else if(triesCount == 5)
+        else if(x == 5)
         {
             myPen.forward(500);
             myPen.turnRight(90);
@@ -129,7 +151,7 @@ public class HangmanGraphics
             myPen.down();
             myPen.forward(50);
         }
-        else if(triesCount == 6)
+        else if(x == 6)
         {
             myPen.forward(500);
             myPen.turnRight(90);
@@ -172,6 +194,7 @@ public class HangmanGraphics
             myPen.down();
             myPen.forward(50);
         }
+     }
     }//end of man
 }//end of Hangman
 

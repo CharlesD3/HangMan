@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
+
 /**
  * game of hangman, easy mode
  *
@@ -9,7 +10,8 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class HangmanEasy implements Hintable 
 { 
-    char[] enteredLettersEasy = new char[]{};
+    char[] enteredLettersEasy = new char[100];
+    char userInput;
 
     String winningWord;
 
@@ -18,20 +20,21 @@ public class HangmanEasy implements Hintable
     int triesCount;
     int position = easyWords.length;
 
-    private static final String[] easyWords = new String[] {"dog", "cat"};
+    private static final String[] easyWords = new String[] {"easy", "book", "glass"};
     /**
      * Constructor for objects of class Hangman
      */
     public HangmanEasy()
     {
         // initialise instance variables
-        winningWord = easyWords[ThreadLocalRandom.current().nextInt(easyWords.length)];//holds word chosen by random
+        winningWord = easyWords[ThreadLocalRandom.current().nextInt(easyWords.length)];//gets random word
 
         wordGuessed = false;
 
         triesCount = 0;
+        
+        onePlayerEasy();
 
-        onePlayerEasy(); 
     }
     /**
      *checks if user input is correct
@@ -42,19 +45,22 @@ public class HangmanEasy implements Hintable
     {
         System.out.println("Guess a letter:");
         Scanner input = new Scanner(System.in);
-        char userInput = input.nextLine().charAt(0);
+        userInput = input.nextLine().charAt(0);
 
-        hint(userInput);
+        //hint(userInput);
+
+
         if (isLetterInWord(userInput)) 
         {
             enteredLettersEasy[findEmptyPos()] = userInput;
             return true;
-        } //checks if the character entered is correct
+        }
+
         else
         {
             return false;
-        }//end of if-else
-    }//end of enterLetterEasy
+        }//end of if-el
+    } //checks if the character entered is correct
     /**
      * Print questionmarks for hidden letters
      * 
@@ -63,7 +69,6 @@ public class HangmanEasy implements Hintable
      */
     public void print() 
     {
-        // Iterate through all letters in word
         System.out.println();
         for (char ch : winningWord.toCharArray()) 
         {
@@ -73,7 +78,7 @@ public class HangmanEasy implements Hintable
             }//prints character if it is in the word
             else 
             {
-                System.out.print("?");
+                System.out.print("*");
             }//prints out ?
         }//if character is entered, it will run this
     }//end of print
@@ -85,7 +90,6 @@ public class HangmanEasy implements Hintable
     public void onePlayerEasy()
     {
         print();//prints screen
-        
         while (!wordGuessed)
         {
             if (enterLetterEasy())
@@ -136,28 +140,31 @@ public class HangmanEasy implements Hintable
     }//end of inEnteredLetters
     /**
      * Find first empty position in array of entered letters
-     * 
      *Param:
      *Return:
      */
     public int findEmptyPos() 
-    {    
-        int i;
-        for(i = 0; i <  winningWord.length(); i++)
+    {
+        int i = 0;
+        int empty = 0;
+        //System.out.println(easyWords[i]);
+        //winningWord
+        while (enteredLettersEasy[i] == '*') 
         {
-            if(i == position)
+            if(winningWord.charAt(i) == userInput)
             {
-                return winningWord.charAt(i);
-            }
-        }
-        return i;
+                return i;
+            }//ends the if
+            i++;
+        }//end of while
+        return empty;
     }//end of findEmptyPos
     /**
      * gives user hint
      *
      *Param:
      *Return:
-     */
+      */
     public void hint (int userInput)
     {   
         System.out.println("Press ? for a hint");

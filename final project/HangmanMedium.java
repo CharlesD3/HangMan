@@ -16,7 +16,7 @@ public class HangmanMedium implements Hintable
     
     int triesCount;
 
-    private static final String[] mediumWords = new String[] {"cat", "tree", "dog"};
+    private static final String[] mediumWords = new String[] {"interesting", "computer", "program"};
 
     /**
      * Constructor for objects of class Hangman
