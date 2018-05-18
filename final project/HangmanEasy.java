@@ -47,7 +47,7 @@ public class HangmanEasy implements Hintable
         Scanner input = new Scanner(System.in);
         userInput = input.nextLine().charAt(0);
 
-        //hint(userInput);
+        hint(userInput);
 
 
         if (isLetterInWord(userInput)) 
@@ -78,7 +78,7 @@ public class HangmanEasy implements Hintable
             }//prints character if it is in the word
             else 
             {
-                System.out.print("*");
+                System.out.print("?");
             }//prints out ?
         }//if character is entered, it will run this
     }//end of print
@@ -147,15 +147,14 @@ public class HangmanEasy implements Hintable
     {
         int i = 0;
         int empty = 0;
-        //System.out.println(easyWords[i]);
-        //winningWord
+       
         while (enteredLettersEasy[i] == '*') 
         {
-            if(winningWord.charAt(i) == userInput)
+           if (winningWord.charAt(i) == userInput)
             {
-                return i;
-            }//ends the if
-            i++;
+              return i;
+           }//ends the if
+           i++;
         }//end of while
         return empty;
     }//end of findEmptyPos

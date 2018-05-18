@@ -1,23 +1,26 @@
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
+
 /**
- * game of hangman
+ * game of hangman, easy mode
  *
  * @author Hope Freebourn, Charles Dunn, Evan Hadley. 
  * @version 5/4/18 
  */
 public class HangmanMedium implements Hintable 
 { 
-    char[] enteredLettersMedium = new char[]{};
+    char[] enteredLettersMedium = new char[100];
+    char userInput;
+
     String winningWord;
 
     boolean wordGuessed;
-    
+
     int triesCount;
+    int position = mediumWords.length;
 
-    private static final String[] mediumWords = new String[] {"interesting", "computer", "program"};
-
+    private static final String[] mediumWords = new String[] {"Program", "computer", "advanced"};
     /**
      * Constructor for objects of class Hangman
      */
@@ -25,88 +28,100 @@ public class HangmanMedium implements Hintable
     {
         // initialise instance variables
         winningWord = mediumWords[ThreadLocalRandom.current().nextInt(mediumWords.length)];//gets random word
-        
+
         wordGuessed = false;
+
         triesCount = 0;
-     
+        
         onePlayerMedium();
-    }//end of constructor
-     /**
-     * checks if user input is correct
-     *
+
+    }
+    /**
+     *checks if user input is correct
      *Param: none
-     *Return: if the user guessed the answer right or wrong
+     *Return: true/false
      */
     public boolean enterLetterMedium()  
     {
-        System.out.println("Guess a letter: ");
+        System.out.println("Guess a letter:");
         Scanner input = new Scanner(System.in);
-        char userInput = input.nextLine().charAt(0);
+        userInput = input.nextLine().charAt(0);
+
+        hint(userInput);
+
+
         if (isLetterInWord(userInput)) 
         {
             enteredLettersMedium[findEmptyPos()] = userInput;
             return true;
-        }//checks if the character entered is correct
+        }
+
         else
         {
             return false;
-        }//end of if- else
-    }//end of enterLetterMedium
+        }//end of if-el
+    } //checks if the character entered is correct
     /**
-     * Print questionmarks for hidden letters 
+     * Print questionmarks or hidden letters
+     * 
      *Param: none
-     *Return: ?? or letter in word
+     *Return: ?? or letter
      */
     public void print() 
     {
-        // Iterate through all letters in word
         System.out.println();
         for (char ch : winningWord.toCharArray()) 
         {
-            if (inEnteredLetters(ch)) //if entered letter is in the word, then print the letter
+            if (inEnteredLetters(ch)) 
             {
                 System.out.print(ch);
-            } 
-            else //prints out questionmarks for hidden word
+            }//prints character if it is in the word
+            else 
             {
                 System.out.print("?");
-            }//end of if-else
-        }//end of for loop
+            }//prints out ?
+        }//if character is entered, it will run this
     }//end of print
     /**
-     * counts how many tries
+     *One player game, easy mode
      *Param: none
-     *Return: if letter was right or wrong/ counts how many times word was guessed
+     *Return: if letter was right or wrong/counts how many times word was guessed
      */
     public void onePlayerMedium()
     {
-        int triesCount = 0;
-        print();//prints results
-        while (!wordGuessed) 
+        print();//prints screen
+        while (!wordGuessed)
         {
-            if (enterLetterMedium()) 
+            if (enterLetterMedium())
             {
                 System.out.println("That letter is in it");
-            }//prints if letter is found in word
+            }//prints if letter is in it
             else
             {
                 System.out.println("That letter is not in it");
-            }//end of if-else
+            }//prints out if letter is not in it
             print();
             triesCount++;
-        }
+        }//runs until word is guessed
         System.out.println("\nThe word is " + winningWord + "! It took you " + triesCount + " to guess that!");
     }//end of one player game/easy 
-   
+    /**
+     * checks if letter is in the word
+     * 
+     *Param:
+     *Return:
+     */
     public boolean isLetterInWord(char letter) 
     {
-        for (char c : winningWord.toCharArray()) {
-            if (c == letter) {
+        for (char c : winningWord.toCharArray()) 
+        {
+            if (c == letter) 
+            {
                 return true;
-            }
-        }
+            }//if the character is the word, returns true
+        }//checks if letter is in the word
         return false;
-    }   
+    }//end of isLetterInWord
     /**
      * Check if letter is in enteredLetters array
      *Param:
@@ -131,23 +146,30 @@ public class HangmanMedium implements Hintable
     public int findEmptyPos() 
     {
         int i = 0;
-        while (enteredLettersMedium[i] != '\u0000') 
+        int empty = 0;
+        //System.out.println(mediumWords[i]);
+        //winningWord
+        while (enteredLettersMedium[i] == '*') 
         {
-            i++;
-        }//end of whiele
-        return i;
+           if (winningWord.charAt(i) == userInput)
+            {
+              return i;
+           }//ends the if
+           i++;
+        }//end of while
+        return empty;
     }//end of findEmptyPos
     /**
      * gives user hint
      *
      *Param:
      *Return:
-     */
+      */
     public void hint (int userInput)
     {   
         System.out.println("Press ? for a hint");
         int giveLetter = 0;
-        if(userInput == '?' && triesCount < 4 )
+        if(userInput == '?' && triesCount < 6 )
         {
             System.out.println("\nOne letter is " + winningWord.charAt(giveLetter));
         }//prints out a letter in the word
